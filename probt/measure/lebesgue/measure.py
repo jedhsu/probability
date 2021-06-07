@@ -1,0 +1,2 @@
+class LebesgueMeasure(Measure):
+    pass
