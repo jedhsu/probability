@@ -1,5 +1,20 @@
+"""
+
+    *Abstract Space*
+
+  An arbitrary mathematical space with countably infinite elements.
+
+  (We first simplify by restricting to finite case.)
+
+"""
 from dataclasses import dataclass
-from typing import Collection, Generic, Hashable, Iterator, Sequence, TypeVar
+
+from typing import Collection
+from typing import Generic
+from typing import Hashable
+from typing import Iterator
+from typing import Sequence
+from typing import TypeVar
 
 from sympy import Symbol
 from sympy.sets.fancysets import Naturals0
@@ -10,16 +25,6 @@ __all__ = ["AbstractSpace"]
 
 # [TODO] this typing impl can be cleaner
 
-
-"""
-
-[Abstract Space]
-
-An arbitrary mathematical space with countably infinite elements.
-
-* We first simplify by restricting to finite case.
-
-"""
 
 T = TypeVar("T", bound=Hashable)
 

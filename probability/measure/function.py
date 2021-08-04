@@ -1,20 +1,27 @@
+"""
+
+    *Measurable Function*
+
+"""
+
 from dataclasses import dataclass
-from typing import Generic, Hashable, Mapping, TypeVar
+
+from typing import Generic
+from typing import Hashable
+from typing import Mapping
+from typing import TypeVar
 
 import bidict
-from sympy import Expr, Interval
+from sympy import Expr
+from sympy import Interval
 
-from .measurable import MeasurableSpace, SigmaAlgebra
+from .measurable import MeasurableSpace
+from .algebra import SigmaAlgebra
 
 T = TypeVar("T", bound=Hashable)
 
 __all__ = ["MeasurableFunction"]
 
-"""
-
-Measurable Function
-
-"""
 
 PositiveReals = Interval(0, None)
 

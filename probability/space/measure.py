@@ -1,19 +1,22 @@
+"""
+
+    *Measure Space*
+
+"""
+
 from dataclasses import dataclass
-from typing import Generic, Hashable, TypeVar
+
+from typing import Generic
+from typing import Hashable
+from typing import TypeVar
 
 from sympy import Expr
 
-from .function import MeasurableFunction
-from .mspace import MeasurableSpace
+from ..measure import MeasurableFunction
+from .measurable import MeasurableSpace
 
 
 __all__ = ["MeasureSpace"]
-
-"""
-
-Measure Space.
-
-"""
 
 T = TypeVar("T", bound=Hashable)
 

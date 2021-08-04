@@ -1,6 +1,20 @@
+"""
+
+    *Sigma Algebra*
+
+  A sigma-algebra is a collection of subsets of Omega which is
+  closed under complement and finite union.
+
+"""
+
 from __future__ import annotations
 from dataclasses import dataclass
-from typing import Collection, Generic, Hashable, Iterator, TypeVar
+
+from typing import Collection
+from typing import Generic
+from typing import Hashable
+from typing import Iterator
+from typing import TypeVar
 
 from sympy.sets.fancysets import Naturals0
 from sympy.sets.sets import Set
@@ -11,14 +25,6 @@ __all__ = ["SigmaAlgebra"]
 
 # [TODO] get the power set typing right
 
-"""
-
-[SigmaAlgebra]
-
-A sigma-algebra is a *collection of subsets* of Omega which is
-closed under complement and finite union.
-
-"""
 
 T = TypeVar("T", bound=Hashable)
 

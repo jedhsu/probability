@@ -1,16 +1,17 @@
+"""
+
+    *Indicator Function*
+
+  Dirac delta function.
+
+"""
 from typing import Generic, Hashable, Literal, Mapping, TypeVar
 
 from sympy import Symbol
 
-from .aspace import AbstractSpace
+from .space import AbstractSpace
 
 T = TypeVar("T", bound=Hashable)
-
-"""
-
-Indicator Function
-
-"""
 
 
 class IndicatorFunction(

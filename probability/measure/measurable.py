@@ -1,17 +1,20 @@
+__all__ = [
+    "AbstractSpace",
+    "SigmaAlgebra",
+    "MeasureSpace",
+]
+
 from dataclasses import dataclass
-from typing import Generic, Hashable, TypeVar
+
+from typing import Generic
+from typing import Hashable
+from typing import TypeVar
 
 from sympy import Symbol
 
 T = TypeVar("T", bound=Hashable)
 
 # [TODO] this typing impl can be cleaner
-
-__all__ = [
-    "AbstractSpace",
-    "SigmaAlgebra",
-    "MeasureSpace",
-]
 
 
 @dataclass

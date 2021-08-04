@@ -1,6 +1,9 @@
 """
+    
+    *Probability Distribution*
 
-A probability distribution is a probability measure such that P(Omega) == 1.
+  A probability distribution is a probability measure
+  such that P(Omega) == 1.
 
 """
 
@@ -39,14 +42,7 @@ class Cumulative(Distribution):
         pass
 
 
-"""
-
-[Testing]
-
-"""
-
-
-class Distributions_:
+class Test:
     @staticmethod
     def dice_roll():
         dist = {
