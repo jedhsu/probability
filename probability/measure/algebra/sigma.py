@@ -1,16 +1,20 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from typing import Collection, Generic, Hashable, Iterator, TypeVar
 
 from sympy.sets.fancysets import Naturals0
 from sympy.sets.sets import Set
 
-from .space import AbstractSpace
+from ..aspace import AbstractSpace
 
 __all__ = ["SigmaAlgebra"]
 
 # [TODO] get the power set typing right
 
 """
+
+[SigmaAlgebra]
+
 A sigma-algebra is a *collection of subsets* of Omega which is
 closed under complement and finite union.
 
@@ -25,19 +29,18 @@ class SigmaAlgebra(
     Collection[Collection[T]],
     Generic[T],
 ):
-    space: AbstractSpace[T]
+    root: AbstractSpace[T]
 
     # [Conditions]                  for type membership
 
-    @property
-    def _closed_under_generating_set(self) -> AbstractSpace[T]:
-        return self.space
+    def _contains_root(self) -> AbstractSpace[T]:
+        return self.root
 
-    @property
+    # [TODO] ugh sympy not extended for typing
+
     def _closed_under_complement(self, elt: set[T]) -> set[T]:
-        return elt.difference(self.space)
+        return elt.difference(self.root)
 
-    @property
     def _closed_under_countable_union(self, elements: set[set[T]]) -> set[T]:
         return set.union(elements)
 
@@ -55,8 +58,15 @@ class SigmaAlgebra(
     # [Conversions]
 
     @staticmethod
-    def from_omega(omega: AbstractSpace[T]):
-        pass
+    def from_omega(omega: AbstractSpace[T]) -> SigmaAlgebra:
+        raise NotImplementedError
+
+    # [Display]
+
+    symbol = "\u2131"
+
+    def __repr__(self) -> str:
+        return f"{self.symbol}({self.space.symbol})"
 
 
 class _Examples:

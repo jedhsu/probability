@@ -10,6 +10,11 @@ T = TypeVar("T", bound=Hashable)
 
 __all__ = ["MeasurableFunction"]
 
+"""
+
+Measurable Function
+
+"""
 
 PositiveReals = Interval(0, None)
 

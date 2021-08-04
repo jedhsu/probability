@@ -1,16 +1,18 @@
+from typing import Generic, TypeVar
+
+from ..measure import MeasureSpace
+from .distribution import Distribution
+
 """
 
 Random Variable
 
 When measurable functions restricted to a codomain of [0, 1], they are
-random variables operating on a probability space.
+considered as random variables operating on a probability space.
 
 """
 
-from typing import Generic, TypeVar
-
-from .distribution import Distribution
-
+__all__ = ["RandomVariable"]
 
 T = TypeVar("T")
 
@@ -21,7 +23,3 @@ class RandomVariable(Generic[T], Distribution):
 
 class ProbabilitySpace(MeasureSpace):
     pass
-
-
-# -- Alias
-Stochastic = RandomVariable

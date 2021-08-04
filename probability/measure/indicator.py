@@ -1,8 +1,16 @@
 from typing import Generic, Hashable, Literal, Mapping, TypeVar
 
-from .measurable import AbstractSpace
+from sympy import Symbol
+
+from .aspace import AbstractSpace
 
 T = TypeVar("T", bound=Hashable)
+
+"""
+
+Indicator Function
+
+"""
 
 
 class IndicatorFunction(
@@ -10,4 +18,10 @@ class IndicatorFunction(
     Generic[T],
 ):
     # [TODO] clarify the set[T] typing
-    pass
+
+    # [Display]
+
+    symbol = Symbol("1")
+
+    def __repr__(self):
+        pass

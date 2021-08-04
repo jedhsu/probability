@@ -3,19 +3,15 @@ from typing import Generic, Hashable, TypeVar
 
 from sympy import Symbol
 
-from .algebra import SigmaAlgebra
-
-__all__ = ["MeasurableSpace"]
+T = TypeVar("T", bound=Hashable)
 
 # [TODO] this typing impl can be cleaner
 
-"""
-
-Measurable Space.
-
-"""
-
-T = TypeVar("T", bound=Hashable)
+__all__ = [
+    "AbstractSpace",
+    "SigmaAlgebra",
+    "MeasureSpace",
+]
 
 
 @dataclass
@@ -23,7 +19,11 @@ class BorelSet(Interval):
     pass
 
 
+# MeasurableSet
+
+
 @dataclass
 class MeasurableSpace(Generic[T]):
+    # [TODO] thinking about capitalizing these given context, though goes against convention
     omega: set[T]
-    algebra: SigmaAlgebra
+    sigma_algebra: SigmaAlgebra[T]

@@ -22,7 +22,9 @@ class MomentGeneratingFunction:
 
 
 class Distribution(
-    Moment, MomentGeneratingFunction, Mapping[Probabilistic, Measurable]
+    Moment,
+    MomentGeneratingFunction,
+    Mapping[Probabilistic, Measurable],
 ):
     pass
 
